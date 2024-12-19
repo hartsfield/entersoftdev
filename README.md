@@ -6,7 +6,7 @@ Warning: This model is still in development and incomplete!
 
 ## Intro: Development -> Staging -> Production
 
-Enterprise web applications require a multi-system environment. Development machines are the computers used by engineers to code and test the pre-release application, and access and deploy the finalized version of it, where it's then sent to a staging server designed to mimic the production environem, tested, and finally deployed to production server cluster(s), where users can access it.
+Enterprise web applications require a multi-system environment. Development machines are the computers used by engineers to code and test the pre-release application, and access and deploy the finalized version of it, where it's then sent to a staging server designed to mimic the production environment, tested, and finally deployed to production server cluster(s), where users can access it.
 
 ![prod](https://github.com/user-attachments/assets/87ce5afe-0b75-4f5d-9df3-24c217e2a58a)
 
