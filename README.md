@@ -26,6 +26,8 @@ This model will be implemented on the `bolt stack`:
 
 Firstly, create an account on Google Cloud Platform, and spin up a Linux virtual machine. Once its instantiated, copy the gcloud command used for accessing it remotely via ssh, and paste it into your terminal.
 
+<img width="913" alt="Screenshot 2024-12-18 at 8 15 25 PM" src="https://github.com/user-attachments/assets/817be93d-eb29-4aa5-81d4-9298d64f3d06" />
+
 #### Domain and DNS
 
 Now we may purchase our domain name, and configure its DNS records.
