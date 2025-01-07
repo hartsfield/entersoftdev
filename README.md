@@ -71,13 +71,13 @@ To install these tools and set up this development environment on Fedora 41 Linu
     # Install (n)vim plugins, Go Binaries, and language server packs for autocompletion:
     nvim -c :PlugInstall -c :GoInstallBinaries -c ":CocInstall coc-sh coc-css coc-flutter coc-go coc-html coc-tsserver coc-json"
 
-#### Cloud Servers
+# Cloud Servers
 
 Firstly, create an account on Google Cloud Platform, and spin up a Linux virtual machine. Once its instantiated, copy the gcloud command used for accessing it remotely via ssh, and paste it into your terminal.
 
 <img width="913" alt="Screenshot 2024-12-18 at 8 15 25 PM" src="https://github.com/user-attachments/assets/817be93d-eb29-4aa5-81d4-9298d64f3d06" />
 
-#### Domain and DNS
+# Domain and DNS
 
 Now we may purchase our domain name, and configure its DNS records.
 
@@ -147,4 +147,3 @@ TODO:
 #### Setting up the Production Environment
 #### Creating an Application with Bolt
 #### Deploying the Application
-#### Enabling TLS Encryption using Letsencrypt
