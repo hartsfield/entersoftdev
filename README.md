@@ -26,7 +26,7 @@ Enterprise web applications require a multi-system environment. Development mach
 
 This model will be implemented on the `bolt stack`
 
-An explanation of what Bolt architecture is can be found in [the git repository for the Bolt software](https://github.com/hartsfield/bolt), but it will also be explained herein.
+An explanation of what Bolt architecture is can be found in [the git repository for the Bolt software](https://github.com/hartsfield/bolt), and will be partially explained below:
 
 Basically the front end is built using components composed of regular 
 HTML/css/JavaScript, but they're executed via Go html templating, so Go 
