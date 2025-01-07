@@ -26,9 +26,9 @@ Enterprise web applications require a multi-system environment. Development mach
 
 # Development Environment -- Bolt - A Component based Model-View-Controller (MVC) framework
 
-This model will be implemented on the `bolt stack`
+This model will be implemented under the bolt architecture.
 
-An explanation of what Bolt architecture is can be found in [the git repository for the Bolt software](https://github.com/hartsfield/bolt), and will be partially explained below:
+An explanation of what bolt architecture is can be found in [the git repository for the Bolt software](https://github.com/hartsfield/bolt), and will be partially explained below:
 
 Basically the front end is built using components composed of regular 
 HTML/css/JavaScript, but they're executed via Go html templating, so Go 
