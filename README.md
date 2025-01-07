@@ -6,11 +6,11 @@ Warning: This model is still in development and incomplete!
 
 Other repos referenced herein or relevant otherwise:
 
-    https://github.com/hartsfield/bolt
-    https://github.com/hartsfield/CI-CD-Bolt
-    https://github.com/hartsfield/bp
-    https://github.com/hartsfield/tagmachine.xyz
-    https://github.com/hartsfield/tagmachine
+    https://github.com/hartsfield/bolt             # The Bolt software
+    https://github.com/hartsfield/CI-CD-Bolt       # Useful(?)
+    https://github.com/hartsfield/bp               # reverse proxy (for remote server)
+    https://github.com/hartsfield/tagmachine.xyz   # new tagmachine
+    https://github.com/hartsfield/tagmachine       # old tagmachine
 
 # Development -> Staging -> Production
 
