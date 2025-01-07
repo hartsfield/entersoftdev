@@ -6,7 +6,7 @@ How do enterprise software engineers continuously integrate and deploy (CICD) pr
 
 Warning: This model is still in development and incomplete!
 
-In order to orient yourself to the paradigm about which is placed before you, It's advised to work through this:
+In order to orient yourself to the paradigm about which you've been placed, It's advised to work through this:
 
 https://go.dev/doc/articles/wiki/
 
