@@ -8,7 +8,7 @@ In order to orient yourself to the paradigm about which is placed before you, It
 
 https://go.dev/doc/articles/wiki/
 
-Other repos referenced herein or relevant otherwise:
+Other repos referenced herein, or relevant otherwise:
 
     https://github.com/hartsfield/bolt             # The Bolt software
     https://github.com/hartsfield/CI-CD-Bolt       # Useful(?)
