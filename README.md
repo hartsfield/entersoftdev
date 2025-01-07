@@ -4,6 +4,14 @@ How do enterprise software engineers continuously integrate and deploy (CICD) pr
 
 Warning: This model is still in development and incomplete!
 
+Other repos referenced herein or relevant otherwise:
+
+https://github.com/hartsfield/bolt
+https://github.com/hartsfield/CI-CD-Bolt
+https://github.com/hartsfield/bp
+https://github.com/hartsfield/tagmachine.xyz
+https://github.com/hartsfield/tagmachine
+
 # Development -> Staging -> Production
 
 Enterprise web applications require a multi-system environment. Development machines are the computers used by engineers to code and test the pre-release application, and access and deploy the finalized version of it, where it's then sent to a staging server designed to mimic the production environment, tested, and finally deployed to production server cluster(s), where users can access it.
