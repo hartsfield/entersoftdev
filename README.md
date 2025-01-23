@@ -7,11 +7,15 @@ and delivery (CI&D) of enterprise software. Engineers should reference this
 model in understanding the multi-step process necessary for running and 
 maintaining scalable, production-ready web applications.
 
-Additionally, this document serves as a guide for the process of creating a
-dynamic web application using the `go` programming language, implemented in the
-`bolt architecture`, a `bolt app`. We will describe the process of running
-this application locally, and streamlining seamless deployments to
-`Google Cloud Platform`. 
+Additionally, this document serves as a guide in the process of creating
+dynamic web applications using the `go` programming language, which are 
+implemented in the `bolt architecture`. We will describe the process of running
+this application locally, and streamlining seamless deployments to 
+`Google Cloud Platform`.
+
+Once `bolt architecture` is understood, `bolt` is introduced, a tool for
+streamlining the process of building scalable, production ready, enterprise web
+applications, modeled in the `bolt architecture`: `bolt apps`
 
 Warning: This model is still in development and incomplete!
 
@@ -43,6 +47,7 @@ See: https://go.dev/doc/articles/wiki/
      - Interfacing With a Database
      - Running The Application
  - Deploying the Application to Google Cloud Platform
+     - Costs
      - CI&D Integrations: Why `bolt`?
  - Using The `bolt` Program to Build a `bolt app`
      - Install Basic Programming Tools
