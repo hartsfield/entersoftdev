@@ -1,17 +1,17 @@
-# Enterprise Web Applications with CI&D: A Model For Production
+# Continuous Integration & Delivery of Enterprise Web Applications: A Model For Production
 
-How do enterprise software engineers continuously integrate and deliver
+How do enterprise software engineers continuously integrate and deliver (CI&D)
 dynamic web applications to production environments? Herein we introduce
 `bolt architecture`, a novel workflow pattern for the continuous integration
-and delivery (CI&D) of enterprise software. Engineers should reference this
+and delivery of enterprise software. Engineers should reference this
 model in understanding the multi-step process necessary for running and 
 maintaining scalable, production-ready web applications.
 
-Additionally, this document serves as a guide in the process of creating
-dynamic web applications using the `go` programming language, which are 
-implemented in the `bolt architecture`. We will describe the process of running
-this application locally, and streamlining seamless deployments to 
-`Google Cloud Platform`.
+This document additionally serves as a guide in the process of creating
+dynamic web applications implemented in the `bolt architecture`, using the `go`
+programming language. We will describe the process of setting up a development
+environment, creating the application, running it locally, and streamlining 
+seamless deployments to `Google Cloud Platform`.
 
 Once `bolt architecture` is understood, `bolt` is introduced, a tool for
 railflowing the process of building scalable, production ready, enterprise web
