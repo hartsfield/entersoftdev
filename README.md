@@ -135,15 +135,11 @@ be interfaced with any databse.
 
 ### Directory Structure/Folder Hierarchy
 
-Herein, the term `bolt app` refers to an application built using the
-`bolt architecture`, usually a web application. Any application built using the
-`bolt architecture` should be designed with the following directory structure 
-in mind. 
-
-Comprehending this directory structure is important in understanding `bolt 
-architecutre`. It's not complex, but it is essential, and once we understand 
-the structure of a an app built using the `bolt architecture`, we can hack on
-any `bolt app`. 
+Any application built using the `bolt architecture` should be designed with the
+following directory structure in mind. Comprehending this directory structure
+is important in understanding `bolt architecutre`. It's not complex, but it is 
+essential, and once we understand the structure of an app built using the
+`bolt architecture`, we can hack on any `bolt app`. 
 
 The structure of a `bolt app` looks like this:
 
