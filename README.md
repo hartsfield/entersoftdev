@@ -263,6 +263,7 @@ building web applications using the `bolt architecture`.
 # Quickstart
 
  - Compile bolt:
+
     $ cd
     $ git clone https://github.com/hartsfield/bolt
     $ cd bolt
