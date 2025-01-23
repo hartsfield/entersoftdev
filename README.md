@@ -19,7 +19,12 @@ See: https://go.dev/doc/articles/wiki/
 # Table of contents
 
  - Conventions Used In This Guide
+     - Terminology
  - Dynamic Web Applications & `bolt architecture`
+     - Static vs. Dynamic Web Applications
+     - `bolt architecture`: A Component-based MVC Architecture for Scalable & Dynamic Web Applications
+     - The Model-View-Controller (MVC) Pattern
+     - Templates explained
  - Creating an Application with the `bolt architecture`
  - Deploying the Application
  - The Enterprise Development Environment
