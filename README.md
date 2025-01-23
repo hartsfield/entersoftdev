@@ -1,14 +1,15 @@
-# Enterprise Web Applications with CICD: A Model For Production Using the `bolt architecture`
+# Enterprise Web Applications with CI&D: A Model For Production
 
-How do enterprise software engineers continuously integrate and deploy 
-production-ready web applications? Herein is described a CICD workflow model 
-for enterprise development firms. Engineers should reference this model in 
-understanding the multi-step process necessary for running and maintaining 
-scalable, production-ready web applications.
+How do enterprise software engineers continuously integrate and deliver
+dynamic web applications to production environemts? Herein we introduce
+`bolt architecture`, a novel workflow pattern for the continuous integration
+and delivery (CI&D) of enterprise software. Engineers should reference this
+model in understanding the multi-step process necessary for running and 
+maintaining scalable, production-ready web applications.
 
-This guide describes the process of creating a dynamic web application using 
-the `go` programming language, implemented in a novel application architecture
-we've termed the `bolt architecture`. We will describe the process of running
+Additionally, this document serves as a giude for the process of creating a
+dynamic web application using the `go` programming language, implemented in the
+`bolt architecture`, a `bolt app`. We will describe the process of running
 this application locally, and streamlining seamless deployments to
 `Google Cloud Platform`. 
 
@@ -18,7 +19,7 @@ See: https://go.dev/doc/articles/wiki/
 
 # Table of contents
 
- - Conventions Used In This Guide
+ - Conventions Used Herein
      - Terminology
  - Dynamic Web Applications & `bolt architecture`
      - Static vs. Dynamic Web Applications
@@ -26,27 +27,38 @@ See: https://go.dev/doc/articles/wiki/
      - The Model-View-Controller (MVC) Pattern
      - Templates Explained
      - Directory Structure/Folder Hierarchy
- - Creating a `bolt app`: Applications with the `bolt architecture`
+ - Creating a `bolt app`: Application Design with a `bolt architecture`
      - Install Basic Programming Tools
-     - Create the Directory Structure
+         - Programming Language
+         - Text Editor
+         - Version Control System
+         - Other Recommended Tools
+     - The Directory Structure Explained
+         - Creating The Directory Structure
      - Writing a Server, Router, and Route Handler
+         - Writing a Web Server in Go
+         - What is Routing?
+         - What is a Rote Handler?
      - Creating a Page and Component
      - Running The Application
-     - CI-CD Integrations
  - Deploying the Application to Google Cloud Platform
+     - CI&D Integrations: Why `bolt`?
  - Using The `bolt` Program to Build a `bolt app`
      - Install Basic Programming Tools
      - Installing the `bolt` software
      - Creating an Application and Components With the `bolt` software
      - Running the Application locally
-     - Deploying and Running on Google Cloud Platform
-     - CICD Integrations and bolt-proxy (bp)
+     - CI&D Integrations Server-side: bolt-proxy (`bp`)
+         - Deploying and Running on Google Cloud Platform
+ - The Enterprise
  - The Enterprise Development Environment
      - Editor Set Up Guide
      - Other Helpful Tools
  - The Enterprise Production Environment
+     - Application Initialization Cycles
+     - Gotchas
 
-# Conventions Used In This Guide
+# Conventions Used Herein
 
 ### Terminology
  - `bolt architecture` is the name given to a specific workflow pattern that 
