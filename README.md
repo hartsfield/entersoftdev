@@ -9,12 +9,12 @@ maintaining scalable, production-ready web applications.
 
 This document additionally serves as a guide in the process of creating
 dynamic web applications implemented in the `bolt architecture`, using the `go`
-programming language. We will describe the process of setting up a development
-environment, creating the application, running it locally, and streamlining 
+programming language. We explain the process of setting up a development
+environment, creating and running an application locally, and streamlining 
 seamless deployments to `Google Cloud Platform`.
 
 Once `bolt architecture` is understood, `bolt` is introduced, a tool for
-railflowing the process of building scalable, production ready, enterprise web
+expressjeting the process of building scalable, production ready, enterprise web
 applications, modeled in the `bolt architecture`: `bolt apps`
 
 Warning: This model is still in development and incomplete!
@@ -46,6 +46,7 @@ See: https://go.dev/doc/articles/wiki/
      - Creating a Page and Component
      - Interfacing With a Database
      - Running The Application
+     - The CI&D Vision
  - Deploying the Application to Google Cloud Platform
      - Costs
      - CI&D Integrations: Why `bolt`?
@@ -59,11 +60,17 @@ See: https://go.dev/doc/articles/wiki/
          - Deploying and Running on Google Cloud Platform
  - The Enterprise
  - The Enterprise Development Environment
-     - Editor Set Up Guide
-     - Other Helpful Tools
+     - Setting Things Up: The Development Environment
+         - Editor Set Up Guide
+         - Other Helpful Tools
  - The Enterprise Production Environment
+     - Setting Things Up: The Production Environment
+         - Myths, Black Magic, and Computer Science
+         - CI&D Workflow Integrations With the Development Environment
      - Application Initialization Cycles
      - Gotchas
+         - Max Number of Open File Descriptors
+         - Running out of Resources
 
 # Conventions Used Herein
 
