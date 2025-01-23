@@ -133,6 +133,8 @@ developers.
 This documentation will use the database `redis`, but bolt architecture can
 be interfaced with any databse. 
 
+# Creating an Application with the `bolt architecture`
+
 ### Directory Structure/Folder Hierarchy
 
 Any application built using the `bolt architecture` should be designed with the
@@ -298,7 +300,7 @@ Result:
 <img width="800" alt="Screenshot 2024-12-22 at 12 55 26 AM" src="https://github.com/user-attachments/assets/680b1f20-5297-4938-990b-acd40e7f15a6" />
 
 
-# Development -> Staging -> Production
+# The Enterprise Development Environment
 
 Enterprise web applications require a multi-system environment. Development 
 machines are the computers used by engineers to code and test the pre-release 
@@ -333,7 +335,8 @@ architecture, server code, and other files that are useful for
 rapid prototyping and development. Bolt also has other features useful for 
 continuous integration and development by enterprise firms. 
 
-### Configurating CI/CD using bolt architecture
+# Configurating CI/CD using bolt architecture
+
 
 Below is outlined the steps taken to implement a continuous integration and development environment for building scalable web applications using whats termed herein as the `bolt architecture`. We implement the bolt architecture using the following toolkit:
 
@@ -379,13 +382,15 @@ To install these tools and set up this development environment on Fedora 41 Linu
     # Install (n)vim plugins, Go Binaries, and language server packs for autocompletion:
     nvim -c :PlugInstall -c :GoInstallBinaries -c ":CocInstall coc-sh coc-css coc-flutter coc-go coc-html coc-tsserver coc-json"
 
-# Cloud Servers
+# The Enterprise Production Environment
+
+### Cloud Servers
 
 Firstly, create an account on Google Cloud Platform, and spin up a Linux virtual machine. Once its instantiated, copy the gcloud command used for accessing it remotely via ssh, and paste it into your terminal.
 
 <img width="913" alt="Screenshot 2024-12-18 at 8 15 25 PM" src="https://github.com/user-attachments/assets/817be93d-eb29-4aa5-81d4-9298d64f3d06" />
 
-# Domain and DNS
+### Domain and DNS
 
 Now we may purchase our domain name, and configure its DNS records.
 
@@ -426,6 +431,8 @@ root).
     sudo iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 8443
     sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
 
+### CICD Integrations and bolt-proxy (bp)
+
 Configure  `bp`'s `prox.conf` file:
 
     {
@@ -450,11 +457,8 @@ Build and start `bp`:
 
  
 
-# Creating an Application with the `bolt architecture`
 # Deploying the Application
-# The Enterprise Development Environment
 ## Editor Set Up Guide
 ## Other Helpful Tools
-# The Enterprise Production Environment
 
 
