@@ -63,7 +63,7 @@ See: https://go.dev/doc/articles/wiki/
 ### Terminology
  - `bolt architecture` is the name given to a specific workflow pattern that 
     can be used by enterprise software firms in building and deploying scalable
-    application quickly, in a way that other developers familiar with the 
+    applications quickly, in a way that other developers familiar with the 
     `bolt architecture` can comprehend. `bolt architecture` will be explained 
     in detail in the next section of this guide.
  - A `bolt app` is an application built using the `bolt-architecture`.
