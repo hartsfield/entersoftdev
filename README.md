@@ -1,4 +1,4 @@
-# Enterprise Web Applications: A Model For Production and CI/CD with the `bolt architecture`
+# Enterprise Web Applications: A Model For Production & CICD with the `bolt architecture`
 
 How do enterprise software engineers continuously integrate and deploy 
 production-ready web applications? Herein is described a CICD workflow model 
