@@ -7,7 +7,7 @@ understanding the multi-step process necessary for running and maintaining
 scalable, production-ready web applications.
 
 This guide describes the process of creating a dynamic web application using 
-the `go` programming language, implementing a novel application architecture
+the `go` programming language, implemented in a novel application architecture
 we've termed the `bolt architecture`. We will describe the process of running
 this application locally, and streamlining seamless deployments to
 `Google Cloud Platform`. 
