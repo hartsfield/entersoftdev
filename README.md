@@ -1,10 +1,16 @@
-# Enterprise Web Applications: A Model For Production
+# Enterprise Web Applications: A Model For Production AKA CI/CD with the `bolt architecture`
 
-How do enterprise software engineers continuously integrate and deploy (CICD)
-production web applications? Herein is described a CICD workflow for enterprise
-development firms. Engineers should reference this model in understanding the 
-multi-step process necessary for running and maintaining scalable, 
-production-ready web applications.
+How do enterprise software engineers continuously integrate and deploy 
+production-ready web applications? Herein is described a CICD workflow model 
+for enterprise development firms. Engineers should reference this model in 
+understanding the multi-step process necessary for running and maintaining 
+scalable, production-ready web applications.
+
+This guide describes the process of creating a dynamic web application using 
+the `go` programming language, implementing a novel application architecture
+we've termed the `bolt architecture`. We will describe the process of running
+this application locally, and streamlining seamless deployments to
+`Google Cloud Platform`. 
 
 Warning: This model is still in development and incomplete!
 
@@ -17,18 +23,264 @@ See: https://go.dev/doc/articles/wiki/
  - Creating an Application with the `bolt architecture`
  - Deploying the Application
  - The Enterprise Development Environment
-     - Editor
+     - Editor Set Up Guide
      - Other Helpful Tools
  - The Enterprise Production Environment
 
-# Conventions used in this guide
+# Conventions Used In This Guide
+
+## Terminology
+ - `bolt architecture` is the name given to a specific workflow pattern that 
+    can be used by enterprise software firms in building and deploying scalable
+    application quickly, in a way that other developers familiar with the 
+    `bolt architecture` can comprehend. `bolt architecture` will be explained 
+    in detail in the next section of this guide.
+ - A `bolt app` is an application built using the `bolt-architecture`.
+ - `bolt` is the name given to a program with helpful tooling for developing
+   `bolt apps`, and can be used to generate the scaffolding and boiler plate
+   code for a `bolt app`.
+
 # Dynamic Web Applications & `bolt architecture`
-# Creating an Application with the `bolt architecture`
-# Deploying the Application
-# The Enterprise Development Environment
-## Editor Set Up Guide
-## Other Helpful Tools
-# The Enterprise Production Environment
+
+## Static vs. Dynamic Web Applications
+
+Web applications come in two forms, static and dynamic. A static application
+is one that doesn't change state or process information, such as a simple
+business website containing information about the business and nothing more. 
+Dynamic applications are those like the Facebook and Amazon websites, 
+constantly changing state and processing information provided by users and 
+merchants. 
+
+## `bolt architecture`: A Component-based MVC Architecture for Scalable & Dynamic Web Applications
+
+The `bolt architecture` is not complicated, instead, it's designed to be
+fully comprehendible and generic. The bolt architecture does what most other
+web frameworks are capable of, without introducing third party dependencies, or
+much overhead at all. In fact, the bolt architecture can probably be 
+implemented in just about any programming language supporting 
+`templating`, and used to build just about any GUI application.
+
+The `go` programming language is used in this documentation, but the bolt 
+architecture is meant to be explained herein so that a student programmer may
+implement it any way they see fit. 
+
+### The Model-View-Controller (MVC) Pattern
+
+
+
+### Templates explained
+
+When we use the word "template", we are not refering to pre-built websites or
+using a "theme". Websites such as wikipedia, github, and facebook all use a 
+technique to display thier websites called "templating". When a wikipedia 
+article is requested by a user, wikipedias server code queries a database for
+that page's data object. The properties of this object are used to "fill-out" 
+what we could call an "article" template, and this template is then served to 
+the user as a wikipedia article. 
+
+A template could be as little as one line of html containg a `template 
+directive`, which are wrapped in currly braces in go. 
+
+                     <h1>{{.Title}}</h1>          <-- page.html with template
+                                                      directive in curly braces
+                              |
+                              |          
+                              v
+        var v viewData                            <-- These lines turn an
+        redis.HGETALL(context, "pageData").Scan(&v)   instance of a viewData
+                                                      type into an object
+        v == *v{Title: "BOLT"}                        containing the data we 
+                                                      retrieved from the 
+                              |                       database
+                              |                            
+                              v
+
+       templates.Exec("page.html", &v)            <-- compile page.html with &v
+                                                              
+                              |
+                              |
+                              v
+
+                        <h1>BOLT</h1>             <-- The directive is now
+                                                      replaced with the 
+                                                      view data.
+                                                                    
+
+An enterprise app will likely store data for different page `view`s in a
+`database`. Your programming language should be able to interface with most
+databases using third-party tooling likely provided by the database
+developers. 
+
+This documentation will use the database `redis`, but bolt architecture can
+be interfaced with any databse. 
+
+### Directory Structure/Folder Hierarchy
+
+Herein, the term `bolt app` refers to an application built using the
+`bolt architecture`, usually a web application. Any application built using the
+`bolt architecture` should be designed with the following directory structure 
+in mind. 
+
+Comprehending this directory structure is important in understanding `bolt 
+architecutre`. It's not complex, but it is essential, and once we understand 
+the structure of a an app built using the `bolt architecture`, we can hack on
+any `bolt app`. 
+
+The structure of a `bolt app` looks like this:
+
+    boltApp/
+    │──────────────────────────────── FILES ───────────────────────────────────
+    │    
+    ├── bolt.conf.json  ─────  Configure the app.
+    │
+    ├───── autoload.sh  ─────  Start and restart the app. Tell your editor to 
+    │                          run this on save.
+    │
+    ├───────── main.go  ─────  func main() - Where the app is initiated.
+    │
+    ├────── globals.go  ─────  Global variables, all in one place.
+    │
+    ├────── helpers.go  ─────  Helper functions that don't fit anywhere else, 
+    │                          some are unused, but will probably be needed in 
+    │                          most apps. This may be turned into a seperate 
+    │                          package eventually
+    │
+    ├─────── server.go  ─────  Server stuff. These files can be edited manually
+    ├─────── router.go         or bolt can automatically add routes
+    ├───── handlers.go         and handlers.
+    │ 
+    ├───── viewdata.go  ─────  The data that we use to "fill out" the template.
+    │                          If we add a component that will handle some 
+    │                          new data from the server, we have to edit this.
+    │ 
+    │ 
+    │──────────────────────────────── FOLDERS ─────────────────────────────────
+    │
+    ├── public/ ─────────────  This folder is served to the web, and will──────
+    │   └── media/             ususally only contain media.
+    │    
+    └── internal/ ───────────  This folder contains "components" and "pages".──
+        │                      This folder itself is not served to the web, but
+        │                      the files it contains will be "compiled" into
+        │                      a page that will be served on the web by our app.
+        │ 
+        ├── shared/ ─────────  This folder contains css, html, and javascriptp─
+        │      │               that will be included in the <head> of every 
+        │      │               page served, and so the rules here effect
+        │      │               every component/page.  
+        │      │                
+        │      └─────────── head/       
+        │                    ├── head.css  
+        │                    ├── head.html 
+        │                    └── head.js
+        │ 
+        ├── pages/ ────────── This folder contains "pages", which are folders──
+        │      │              containing html templates, composed of components.
+        │      │                
+        │      └───────────── pageName/     
+        │                      └── pageName.html
+        │ 
+        └── components/ ───── This folder contains "components", each housed──
+               │              in their own directory, named after the component. 
+               │
+               └── componentName/
+                     ├── componentName.css
+                     ├── componentName.html
+                     └── componentName.js ─────────────────────────────────────
+            
+             
+A bolt app is composed of html templates called `pages` and `components`. 
+`pages`are usually composed of components, and components can also be composed
+of other components. 
+
+Components are stored in `internal/components`, and are composed of three files,
+one for javascript, another for css, and a .html file containg html with golang 
+template directives.
+
+    ├── internal
+    │   ├── components
+    │   │   ├── footer
+    │   │   │   ├── footer.css
+    │   │   │   ├── footer.js
+    │   │   │   └── footer.html
+
+
+Once a component is created, it must then be added to a `page` by specifying it 
+in a template directive within that `page`.
+
+# What is the `bolt` program? `bolt` is a Go program for building `bolt apps`
+
+`bolt` is not a third-party dependency, `bolt` is a Go program designed for rapid
+prototyping and development, generating scaffolding and useful tooling for
+building web applications using the `bolt architecture`.
+
+NOTE: `bolt` is under heavy development and still alpha. At this time,
+`bolt` can be used to build single-page static websites, but in the future, bolt 
+will be able to aid in the production of large dynamic websites.
+
+I'm already using bolt to build 
+[TagMachine](https://github.com/hartsfield/machinetag), a dynamic social 
+media platform.
+
+### Features in progress
+
+ - Generate basic scaffolding to begin building a web app
+ - Tooling to speed up the process of creating generic web components
+ - Convert data modeled in JSON into code for forms and basic database procedures
+ - Install components from third party git repos
+
+# Quickstart
+
+ - Compile bolt:
+    $ cd
+    $ git clone https://github.com/hartsfield/bolt
+    $ cd bolt
+    $ go build -o bolt
+    $ mv bolt $PATH
+    $ bolt --help
+
+ - Test Bolt:
+    $ cd test_tools
+    $ ./testproject.sh
+
+Follow the link, you should see:
+
+<img width="582" alt="Screenshot 2025-01-07 at 4 13 35 AM" src="https://github.com/user-attachments/assets/c071f2ec-a85a-4165-a896-a6920e8ca4c0" />
+
+ - Create a bolt app:
+ 
+    $ cd
+    $ mkdir boltapp
+    $ cd boltapp
+    $ bolt
+
+ - Create a component and insert it into the main page:
+        
+    $ bolt --new-component=test && bolt --insert-component=test
+
+ - This command generates a navigation bar component, and three other 
+components, one for each section. The sections have no content yet, so can't be
+seen, but the boiler plate code to begin their creation is there.
+
+    $ bolt --autonav=section1,section2,section3
+
+ - Add a new route and handler:
+
+    $ bolt --new-route=path,handlerName
+
+ - Create an upload form and stream of uploads based on data modeled in a `.json`
+
+    $ touch model.json
+    $ echo '{
+    $    "file": ["FileElement"],
+    $    "text": ["Title","Year","Price"],
+    $    "textarea": ["About"]
+    $ }' >> model.json
+    $ bolt --streamable model.json
+
+Result:
+
+<img width="800" alt="Screenshot 2024-12-22 at 12 55 26 AM" src="https://github.com/user-attachments/assets/680b1f20-5297-4938-990b-acd40e7f15a6" />
 
 
 # Development -> Staging -> Production
@@ -182,5 +434,12 @@ Build and start `bp`:
     bp &; disown
 
  
+
+# Creating an Application with the `bolt architecture`
+# Deploying the Application
+# The Enterprise Development Environment
+## Editor Set Up Guide
+## Other Helpful Tools
+# The Enterprise Production Environment
 
 
