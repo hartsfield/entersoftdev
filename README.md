@@ -260,7 +260,7 @@ designed with portability in mind.
 prototyping and development, generating scaffolding and useful tooling for
 building web applications using the `bolt architecture`.
 
-# Quickstart
+### Quickstart
 
  - Compile bolt:
 
