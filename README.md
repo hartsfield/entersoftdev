@@ -29,7 +29,7 @@ See: https://go.dev/doc/articles/wiki/
 
 # Conventions Used In This Guide
 
-## Terminology
+### Terminology
  - `bolt architecture` is the name given to a specific workflow pattern that 
     can be used by enterprise software firms in building and deploying scalable
     application quickly, in a way that other developers familiar with the 
@@ -42,7 +42,7 @@ See: https://go.dev/doc/articles/wiki/
 
 # Dynamic Web Applications & `bolt architecture`
 
-## Static vs. Dynamic Web Applications
+### Static vs. Dynamic Web Applications
 
 Web applications come in two forms, static and dynamic. A static application
 is one that doesn't change state or process information, such as a simple
@@ -51,7 +51,7 @@ Dynamic applications are those like the Facebook and Amazon websites,
 constantly changing state and processing information provided by users and 
 merchants. 
 
-## `bolt architecture`: A Component-based MVC Architecture for Scalable & Dynamic Web Applications
+### `bolt architecture`: A Component-based MVC Architecture for Scalable & Dynamic Web Applications
 
 The `bolt architecture` is not complicated, instead, it's designed to be
 fully comprehendible and generic. The bolt architecture does what most other
