@@ -453,10 +453,3 @@ Build and start `bp`:
 
     go build -o bp && mv bp $PATH
     bp &; disown
-
- 
-
-## Editor Set Up Guide
-## Other Helpful Tools
-
-
