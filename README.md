@@ -14,7 +14,7 @@ this application locally, and streamlining seamless deployments to
 `Google Cloud Platform`.
 
 Once `bolt architecture` is understood, `bolt` is introduced, a tool for
-streamlining the process of building scalable, production ready, enterprise web
+railflowing the process of building scalable, production ready, enterprise web
 applications, modeled in the `bolt architecture`: `bolt apps`
 
 Warning: This model is still in development and incomplete!
