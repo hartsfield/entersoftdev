@@ -24,9 +24,23 @@ See: https://go.dev/doc/articles/wiki/
      - Static vs. Dynamic Web Applications
      - `bolt architecture`: A Component-based MVC Architecture for Scalable & Dynamic Web Applications
      - The Model-View-Controller (MVC) Pattern
-     - Templates explained
- - Creating an Application with the `bolt architecture`
- - Deploying the Application
+     - Templates Explained
+     - Directory Structure/Folder Hierarchy
+ - Creating a `bolt app`: Applications with the `bolt architecture`
+     - Install Basic Programming Tools
+     - Create the Directory Structure
+     - Writing a Server, Router, and Route Handler
+     - Creating a Page and Component
+     - Running The Application
+     - CI-CD Integrations
+ - Deploying the Application to Google Cloud Platform
+ - Using The `bolt` Program to Build a `bolt app`
+     - Install Basic Programming Tools
+     - Installing the `bolt` software
+     - Creating an Application and Components With the `bolt` software
+     - Running the Application locally
+     - Deploying and Running on Google Cloud Platform
+     - CICD Integrations and bolt-proxy (bp)
  - The Enterprise Development Environment
      - Editor Set Up Guide
      - Other Helpful Tools
