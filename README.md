@@ -42,7 +42,7 @@ See: https://go.dev/doc/articles/wiki/
      - Writing a Server, Router, and Route Handler
          - Writing a Web Server in Go
          - What is Routing?
-         - What is a Rote Handler?
+         - What is a Route Handler?
      - Creating a Page and Component
      - Interfacing With a Database
      - Running The Application
