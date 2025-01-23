@@ -1,13 +1,13 @@
 # Enterprise Web Applications with CI&D: A Model For Production
 
 How do enterprise software engineers continuously integrate and deliver
-dynamic web applications to production environemts? Herein we introduce
+dynamic web applications to production environments? Herein we introduce
 `bolt architecture`, a novel workflow pattern for the continuous integration
 and delivery (CI&D) of enterprise software. Engineers should reference this
 model in understanding the multi-step process necessary for running and 
 maintaining scalable, production-ready web applications.
 
-Additionally, this document serves as a giude for the process of creating a
+Additionally, this document serves as a guide for the process of creating a
 dynamic web application using the `go` programming language, implemented in the
 `bolt architecture`, a `bolt app`. We will describe the process of running
 this application locally, and streamlining seamless deployments to
@@ -103,16 +103,16 @@ implement it however they see fit.
 
 ### Templates explained
 
-When we use the word "template", we are not refering to pre-built websites or
-using a "theme". Websites such as wikipedia, github, and facebook all use a 
-technique to display thier websites called "templating". When a wikipedia 
-article is requested by a user, wikipedias server code queries a database for
+When we use the word "template", we are not referring to pre-built websites or
+using a "theme". Websites such as Wikipedia, github, and Facebook all use a 
+technique to display their websites called "templating". When a Wikipedia 
+article is requested by a user, Wikipedias server code queries a database for
 that page's data object. The properties of this object are used to "fill-out" 
 what we could call an "article" template, and this template is then served to 
-the user as a wikipedia article. 
+the user as a Wikipedia article. 
 
-A template could be as little as one line of html containg a `template 
-directive`, which are wrapped in currly braces in go. 
+A template could be as little as one line of html containing a `template 
+directive`, which are wrapped in curly braces in go. 
 
                      <h1>{{.Title}}</h1>          <-- page.html with template
                                                       directive in curly braces
@@ -145,7 +145,7 @@ databases using third-party tooling likely provided by the database
 developers. 
 
 This documentation will use the database `redis`, but bolt architecture can
-be interfaced with any databse. 
+be interfaced with any database. 
 
 # Creating an Application with the `bolt architecture`
 
@@ -153,7 +153,7 @@ be interfaced with any databse.
 
 Any application built using the `bolt architecture` should be designed with the
 following directory structure in mind. Comprehending this directory structure
-is important in understanding `bolt architecutre`. It's not complex, but it is 
+is important in understanding `bolt architecture`. It's not complex, but it is 
 essential, and once we understand the structure of an app built using the
 `bolt architecture`, we can hack on any `bolt app`. 
 
@@ -173,7 +173,7 @@ The structure of a `bolt app` looks like this:
     │
     ├────── helpers.go  ─────  Helper functions that don't fit anywhere else, 
     │                          some are unused, but will probably be needed in 
-    │                          most apps. This may be turned into a seperate 
+    │                          most apps. This may be turned into a separate 
     │                          package eventually
     │
     ├─────── server.go  ─────  Server stuff. These files can be edited manually
@@ -188,14 +188,14 @@ The structure of a `bolt app` looks like this:
     │──────────────────────────────── FOLDERS ─────────────────────────────────
     │
     ├── public/ ─────────────  This folder is served to the web, and will──────
-    │   └── media/             ususally only contain media.
+    │   └── media/             usually only contain media.
     │    
     └── internal/ ───────────  This folder contains "components" and "pages".──
         │                      This folder itself is not served to the web, but
         │                      the files it contains will be "compiled" into
         │                      a page that will be served on the web by our app.
         │ 
-        ├── shared/ ─────────  This folder contains css, html, and javascriptp─
+        ├── shared/ ─────────  This folder contains css, html, and javascript ─
         │      │               that will be included in the <head> of every 
         │      │               page served, and so the rules here effect
         │      │               every component/page.  
@@ -225,8 +225,8 @@ A bolt app is composed of html templates called `pages` and `components`.
 of other components. 
 
 Components are stored in `internal/components`, and are composed of three files,
-one for javascript, another for css, and a .html file containg html with golang 
-template directives.
+one for javascript, another for css, and a .html file containing html with 
+golang template directives.
 
     ├── internal
     │   ├── components
@@ -329,7 +329,7 @@ implement the bolt architecture using the following toolkit:
  6. Shell:                fish (optional but recommended), bash
  8. Extras (optional):    Ranger, autojump
 
-While not all of these tools are necessary, they are recomended by this guide.
+While not all of these tools are necessary, they are recommended by this guide.
 
 To install these tools and set up this development environment on Fedora 41 
 Linux, we execute the following:
@@ -385,7 +385,7 @@ Now we may purchase our domain name, and configure its DNS records.
     www         A      --         33.33.3.33
 
 
-### Setting up a webserver with TLS and letsencrypt
+### Setting up a web server with TLS and letsencrypt
 
     # Install letsencrypt and set up a proxy server
     dnf -y install letsencrypt
@@ -416,7 +416,7 @@ root).
     sudo iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 8443
     sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
 
-### CICD Integrations and bolt-proxy (bp)
+### CI&D Integrations and bolt-proxy (bp)
 
 Configure  `bp`'s `prox.conf` file:
 
