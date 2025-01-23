@@ -272,6 +272,7 @@ building web applications using the `bolt architecture`.
     $ bolt --help
 
  - Test Bolt:
+
     $ cd test_tools
     $ ./testproject.sh
 
